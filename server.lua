@@ -1,6 +1,7 @@
 AddEventHandler('chatMessage', function(source, name, msg)
 	sm = stringsplit(msg, " ");
 	if sm[1] == "/ooc" then
+		CancelEvent()
 		TriggerClientEvent('chatMessage', -1, "OOC | " .. name, { 128, 128, 128 }, string.sub(msg,5))
 	end
 end)
